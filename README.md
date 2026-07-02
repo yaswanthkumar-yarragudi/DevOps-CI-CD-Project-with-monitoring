@@ -1,53 +1,195 @@
-# BoardgameListingWebApp
+# 🚀 DevOps CI/CD Project with Monitoring
 
-## Description 
+This project demonstrates a complete **CI/CD pipeline** for deploying a Java Spring Boot application using modern DevOps tools. It automates code integration, testing, containerization, deployment, and monitoring to ensure reliable and efficient software delivery.
 
-**Board Game Database Full-Stack Web Application.**
-This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, they are required to log in to add/ edit the board games and their reviews. The 'users' have the authority to add board games to the list and add reviews, and the 'managers' have the authority to edit/ delete the reviews on top of the authorities of users.  
+---
 
-## Technologies
+## 📌 Project Overview
 
-- Java
-- Spring Boot
-- Amazon Web Services(AWS) EC2
-- Thymeleaf
-- Thymeleaf Fragments
-- HTML5
-- CSS
-- JavaScript
-- Spring MVC
-- JDBC
-- H2 Database Engine (In-memory)
-- JUnit test framework
-- Spring Security
-- Twitter Bootstrap
+The pipeline covers the complete DevOps lifecycle:
+
+- Source Code Management with Git & GitHub
+- Continuous Integration using Jenkins
+- Build Automation using Maven
+- Code Quality Analysis with SonarQube
+- Containerization using Docker
+- Container Image Storage with Docker Hub
+- Continuous Deployment to Kubernetes
+- Monitoring using Prometheus & Grafana
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| Version Control | Git, GitHub |
+| CI/CD | Jenkins |
+| Build Tool | Maven |
+| Code Quality | SonarQube |
+| Containerization | Docker |
+| Container Registry | Docker Hub |
+| Orchestration | Kubernetes |
+| Monitoring | Prometheus, Grafana |
+| Language | Java (Spring Boot) |
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── src/
+├── Dockerfile
+├── Jenkinsfile
+├── pom.xml
+├── deployment-service.yaml
+├── sonar-project.properties
+└── README.md
+```
+
+---
+
+## ⚙️ CI/CD Pipeline Workflow
+
+```
+Developer
+      │
+      ▼
+ GitHub Repository
+      │
+      ▼
+ Jenkins Pipeline
+      │
+      ├── Checkout Code
+      ├── Maven Build
+      ├── Unit Testing
+      ├── SonarQube Analysis
+      ├── Build Docker Image
+      ├── Push Image to Docker Hub
+      └── Deploy to Kubernetes
+                 │
+                 ▼
+         Prometheus Monitoring
+                 │
+                 ▼
+          Grafana Dashboard
+```
+
+---
+
+## 🔄 Pipeline Stages
+
+### ✅ Source Code Checkout
+Jenkins pulls the latest code from GitHub.
+
+### ✅ Build Application
+The application is built using Maven.
+
+```bash
+mvn clean package
+```
+
+### ✅ Code Quality Analysis
+SonarQube performs static code analysis and checks for code quality issues.
+
+### ✅ Docker Image Build
+
+```bash
+docker build -t your-dockerhub-username/boardgame .
+```
+
+### ✅ Push Docker Image
+
+```bash
+docker push your-dockerhub-username/boardgame
+```
+
+### ✅ Kubernetes Deployment
+
+```bash
+kubectl apply -f deployment-service.yaml
+```
+
+### ✅ Monitoring
+
+- Prometheus collects application and cluster metrics.
+- Grafana visualizes metrics through interactive dashboards.
+
+---
+
+## 🚀 Prerequisites
+
+- Java 17+
 - Maven
+- Git
+- Docker
+- Kubernetes Cluster
+- Jenkins
+- SonarQube
+- Prometheus
+- Grafana
 
-## Features
+---
 
-- Full-Stack Application
-- UI components created with Thymeleaf and styled with Twitter Bootstrap
-- Authentication and authorization using Spring Security
-  - Authentication by allowing the users to authenticate with a username and password
-  - Authorization by granting different permissions based on the roles (non-members, users, and managers)
-- Different roles (non-members, users, and managers) with varying levels of permissions
-  - Non-members only can see the boardgame lists and reviews
-  - Users can add board games and write reviews
-  - Managers can edit and delete the reviews
-- Deployed the application on AWS EC2
-- JUnit test framework for unit testing
-- Spring MVC best practices to segregate views, controllers, and database packages
-- JDBC for database connectivity and interaction
-- CRUD (Create, Read, Update, Delete) operations for managing data in the database
-- Schema.sql file to customize the schema and input initial data
-- Thymeleaf Fragments to reduce redundancy of repeating HTML elements (head, footer, navigation)
+## 📸 Screenshots
 
-## How to Run
+You can add screenshots of:
 
-1. Clone the repository
-2. Open the project in your IDE of choice
-3. Run the application
-4. To use initial user data, use the following credentials.
-  - username: bugs    |     password: bunny (user role)
-  - username: daffy   |     password: duck  (manager role)
-5. You can also sign-up as a new user and customize your role to play with the application! 😊
+- Jenkins Pipeline
+- SonarQube Dashboard
+- Docker Hub Repository
+- Kubernetes Pods
+- Prometheus Targets
+- Grafana Dashboard
+
+---
+
+## 📈 Features
+
+- Automated CI/CD Pipeline
+- Code Quality Checks
+- Docker Containerization
+- Kubernetes Deployment
+- Monitoring & Visualization
+- Scalable Deployment Architecture
+
+---
+
+## 📚 Learning Outcomes
+
+Through this project, I learned:
+
+- CI/CD Pipeline Implementation
+- Jenkins Pipeline Automation
+- Docker Image Creation
+- Kubernetes Deployments
+- SonarQube Integration
+- Monitoring using Prometheus & Grafana
+- GitHub Workflow
+- DevOps Best Practices
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+Feel free to fork this repository and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is for educational and learning purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Yaswanth Kumar Yarragudi**
+
+- GitHub: https://github.com/yaswanthkumar-yarragudi
+- LinkedIn: https://www.linkedin.com/in/yaswanth-kumar-yarragudi/
+
+⭐ If you found this project useful, don't forget to star the repository!
